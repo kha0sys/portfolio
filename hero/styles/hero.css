@@ -1,0 +1,142 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  margin-bottom: 1rem;
+  position: relative;
+  font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif;
+  text-align: center; /* Aseguramos que el contenedor esté centrado */
+}
+
+.hero-title .main {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  position: relative; /* Agregamos posición relativa */
+}
+
+.hero-title .alt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Esto centra el texto */
+  width: fit-content; /* Ajusta el ancho al contenido */
+  min-width: 100%; /* Asegura que cubra todo el ancho disponible */
+  font-size: clamp(2rem, 6vw, 6rem);
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+/* Ajustamos la transición */
+.hero-title:hover .main {
+  opacity: 0;
+}
+
+.hero-title:hover .alt {
+  opacity: 1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin: 2rem 0;
+}
+
+.chaos-text {
+  display: inline-block;
+  color: var(--accent-red);
+  text-shadow: 0 0 10px rgba(255, 75, 75, 0.5);
+  animation: chaosAnimation 3s infinite;
+}
+
+.order-text {
+  display: inline-block;
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px rgba(75, 165, 255, 0.5);
+  animation: orderAnimation 3s infinite;
+}
+
+@keyframes chaosAnimation {
+  0%,
+  100% {
+    transform: skew(0deg);
+  }
+  25% {
+    transform: skew(-15deg);
+  }
+  75% {
+    transform: skew(15deg);
+  }
+}
+
+@keyframes orderAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Roles Carousel */
+.roles-carousel {
+  height: 50px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.roles {
+  animation: rotateRoles 20s linear infinite;
+}
+
+.role-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+@keyframes rotateRoles {
+  0% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  30% {
+    transform: translateY(-100px);
+  }
+  45% {
+    transform: translateY(-150px);
+  }
+  60% {
+    transform: translateY(-200px);
+  }
+  75% {
+    transform: translateY(-250px);
+  }
+  90% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
