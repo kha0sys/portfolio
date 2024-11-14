@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Cascadia Code Variable', monospace;
   color: black;
   background-color: white;
 }
@@ -39,6 +39,22 @@ nav a[aria-current='page'] {
 main {
   padding: 1rem;
 }
+
+.hero-title .main {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+/* Nuevo estilo para el 0 */
+.hero-title .zero {
+  background: linear-gradient(45deg, rgba(255, 75, 75, 0.5), rgba(75, 165, 255, 0.5));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 
 h1 {
   font-weight: bold;

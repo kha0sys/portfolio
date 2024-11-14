@@ -14,7 +14,7 @@
   display: flex;
   max-width: 1000px;
   margin: 0 auto;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 3rem;
   list-style: none;
   padding: 0;

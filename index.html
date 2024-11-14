@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kha0sys | Portfolio</title>
+     <!-- Font -->
+     <link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/cascadia-code/index.css" rel="stylesheet">
     <!-- stylesheets -->
     <link rel="stylesheet" href="background/styles/background.css" />
     <link rel="stylesheet" href="menu/styles/menu.css" />
     <link rel="stylesheet" href="hero/styles/hero.css">
+    <link rel="stylesheet" href="languages/styles/language-switcher.css">
+    <link rel="stylesheet" href="about/styles/about.css">
   </head>
   <body>
-    <!-- Menu -->
-    <nav class="nav-menu">
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+     <!-- Menu -->
+     <nav class="nav-menu">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="#about" data-en="About" data-es="Sobre mí">About</a></li>
+          <li><a href="#portfolio" data-en="Portfolio" data-es="Portafolio">Portfolio</a></li>
+          <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
       </ul>
-    </nav>
+  </nav>
 
     <!-- Star Field -->
     <div class="star-field">
@@ -40,33 +49,86 @@
       <div class="butterfly"></div>
       <div class="butterfly"></div>
     </div>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="main">kha0sys</span>
-          <span class="alt">Alejandro Amorocho</span>
-        </h1>
-        <p class="hero-subtitle">
-          Where
-          <span class="chaos-text">chaos</span>
-          meets
-          <span class="order-text">order</span>
-        </p>
-        <div class="roles-carousel">
-          <div class="roles">
-            <div class="role-item">Engineer</div>
-            <div class="role-item">Creator</div>
-            <div class="role-item">Problem Solver</div>
-            <div class="role-item">Publicist</div>
-            <div class="role-item">Marketer</div>
-            <div class="role-item">Storyteller</div>
-            <div class="role-item">Engineer</div>
+          <h1 class="hero-title">
+            <span class="main">kha<span class="zero">0</span>sys</span>
+              <span class="alt">Alejandro Amorocho</span>
+          </h1>
+          <p class="hero-subtitle">
+              <span data-en="Where" data-es="Donde">Where</span> 
+              <span class="chaos-text" data-en="chaos" data-es="caos">chaos</span> 
+              <span data-en="meets" data-es="encuentra">meets</span> 
+              <span class="order-text" data-en="order" data-es="orden">order</span>
+          </p>
+          <div class="roles-carousel">
+              <div class="roles">
+                  <div class="role-item" data-en="Engineer" data-es="Ingeniero">Engineer</div>
+                  <div class="role-item" data-en="Creator" data-es="Creador">Creator</div>
+                  <div class="role-item" data-en="Problem Solver" data-es="Solucionador">Problem Solver</div>
+                  <div class="role-item" data-en="Publicist" data-es="Publicista">Publicist</div>
+                  <div class="role-item" data-en="Marketer" data-es="Mercadólogo">Marketer</div>
+                  <div class="role-item" data-en="Storyteller" data-es="Narrador">Storyteller</div>
+                  <div class="role-item" data-en="Engineer" data-es="Ingeniero">Engineer</div>
+              </div>
           </div>
-        </div>
       </div>
-    </section>
-    <!-- Scripts -->
-    <script src="background/scripts/background.js"></script>
-    <script src="menu/scripts/menu.js"></script>
+  </section>
+  <section id="about" class="about">
+    <!-- Who I Am -->
+    <div class="section about-who">
+        <h2 class="section-title" data-en="Who I Am" data-es="Quién Soy">Who I Am</h2>
+        <div class="profile-image">
+          <img src="/api/placeholder/200/200" alt="Alejandro Amorocho">
+      </div>
+        <div class="content-wrapper">
+            <p class="about-text" data-en="Eternal learner, universe explorer, and story seeker. In the vast cosmos of knowledge, I find patterns that connect everything, fueling my passion for continuous growth and understanding. Through books, conversations, and experiences, I weave together disparate threads of wisdom, always seeking the hidden connections that unite seemingly unrelated ideas." 
+               data-es="Eterno aprendiz, explorador del universo y buscador de historias. En el vasto cosmos del conocimiento, encuentro patrones que conectan todo, alimentando mi pasión por el crecimiento continuo y la comprensión. A través de libros, conversaciones y experiencias, entrelazo hilos dispares de sabiduría, siempre buscando las conexiones ocultas que unen ideas aparentemente inconexas.">
+                Eternal learner, universe explorer, and story seeker. In the vast cosmos of knowledge, I find patterns that connect everything, fueling my passion for continuous growth and understanding. Through books, conversations, and experiences, I weave together disparate threads of wisdom, always seeking the hidden connections that unite seemingly unrelated ideas.
+            </p>
+        </div>
+    </div>
+ 
+    <!-- My Philosophy -->
+    <div class="section about-philosophy">
+        <h2 class="section-title" data-en="My Philosophy" data-es="Mi Filosofía">My Philosophy</h2>
+        <div class="content-wrapper">
+            <p class="about-text" data-en="Like a butterfly's wings can stir distant storms, I believe every action carries the potential for profound change. In this delicate dance between chaos and order, we find the perfect rhythm where innovation thrives and transformation begins. Each moment holds the possibility of impact, each decision a seed of change." 
+               data-es="Como el aleteo de una mariposa puede provocar tormentas distantes, creo que cada acción tiene el potencial de generar un cambio profundo. En esta delicada danza entre el caos y el orden, encontramos el ritmo perfecto donde la innovación prospera y la transformación comienza. Cada momento contiene la posibilidad de impacto, cada decisión una semilla de cambio.">
+                Like a butterfly's wings can stir distant storms, I believe every action carries the potential for profound change. In this delicate dance between chaos and order, we find the perfect rhythm where innovation thrives and transformation begins. Each moment holds the possibility of impact, each decision a seed of change.
+            </p>
+        </div>
+    </div>
+ 
+    <!-- My Journey -->
+    <div class="section about-journey">
+        <h2 class="section-title" data-en="My Journey" data-es="Mi Camino">My Journey</h2>
+        <div class="content-wrapper">
+            <p class="about-text" data-en="My path weaves through engineering precision, marketing creativity, and storytelling art. Each role, each experience, carries a piece of who I am - a creator who sees beyond the surface, finding solutions where others see obstacles. In every project, you'll find my essence: the meticulous attention to detail of an engineer, the strategic vision of a marketer, and the compelling narratives of a storyteller." 
+               data-es="Mi camino entreteje la precisión de la ingeniería, la creatividad del marketing y el arte de contar historias. Cada rol, cada experiencia, lleva un pedazo de quien soy - un creador que ve más allá de la superficie, encontrando soluciones donde otros ven obstáculos. En cada proyecto encontrarás mi esencia: la meticulosa atención al detalle de un ingeniero, la visión estratégica de un mercadólogo y las narrativas cautivadoras de un contador de historias.">
+                My path weaves through engineering precision, marketing creativity, and storytelling art. Each role, each experience, carries a piece of who I am - a creator who sees beyond the surface, finding solutions where others see obstacles. In every project, you'll find my essence: the meticulous attention to detail of an engineer, the strategic vision of a marketer, and the compelling narratives of a storyteller.
+            </p>
+        </div>
+    </div>
+ 
+    <!-- Why I Do What I Do -->
+    <div class="section about-why">
+        <h2 class="section-title" data-en="Why I Do What I Do" data-es="Por Qué Hago Lo Que Hago">Why I Do What I Do</h2>
+        <div class="content-wrapper">
+            <p class="about-text" data-en="I believe in the power of small actions to create lasting change. Every line of code, every design decision, every story told - they're all ripples in the vast ocean of possibility. By combining technical expertise with creative vision, I strive to create solutions that not only solve problems but inspire change. Because in the end, it's not just about building things - it's about building a better tomorrow, one small change at a time." 
+               data-es="Creo en el poder de las pequeñas acciones para crear cambios duraderos. Cada línea de código, cada decisión de diseño, cada historia contada - son ondas en el vasto océano de posibilidades. Al combinar la experiencia técnica con la visión creativa, me esfuerzo por crear soluciones que no solo resuelvan problemas sino que inspiren cambios. Porque al final, no se trata solo de construir cosas - se trata de construir un mejor mañana, un pequeño cambio a la vez.">
+                I believe in the power of small actions to create lasting change. Every line of code, every design decision, every story told - they're all ripples in the vast ocean of possibility. By combining technical expertise with creative vision, I strive to create solutions that not only solve problems but inspire change. Because in the end, it's not just about building things - it's about building a better tomorrow, one small change at a time.
+            </p>
+        </div>
+    </div>
+ </section>
+     <!-- Scripts -->
+     <script src="background/scripts/background.js"></script>
+     <script src="menu/scripts/menu.js"></script>
+     <script src="languages/en.js"></script>
+     <script src="languages/es.js"></script>
+     <script src="languages/scripts/language-switcher.js"></script>
+     <script src="about/scripts/about.js"></script>
   </body>
 </html>

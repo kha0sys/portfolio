@@ -1,0 +1,35 @@
+.language-switcher {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001;
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        top: auto;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: 'Cascadia Code', monospace;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: rgba(255,255,255,0.8);
+}
+
+.lang-btn.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+}

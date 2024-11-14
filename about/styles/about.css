@@ -1,0 +1,97 @@
+/* about/styles/about.css */
+:root {
+    --section1-color: var(--accent-blue);
+    --section2-color: var(--accent-violet);
+    --section3-color: var(--accent-green);
+    --section4-color: var(--accent-orange);
+ }
+ 
+ .about {
+    position: relative;
+    z-index: 1;
+    perspective: 2px;
+    transform-style: preserve-3d;
+ }
+ 
+ .section {
+    min-height: 80vh;
+    position: relative;
+    padding: 2rem;
+    opacity: 0;
+    transform: scale(0.95) translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ 
+ .section.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+ }
+ 
+ .section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    text-align: center;
+ }
+ 
+ /* Colores por sección */
+ .about-who .section-title { color: var(--section1-color); }
+ .about-philosophy .section-title { color: var(--section2-color); }
+ .about-journey .section-title { color: var(--section3-color); }
+ .about-why .section-title { color: var(--section4-color); }
+ 
+ /* Efecto hover por sección */
+ .about-who .word.glow { 
+    color: var(--section1-color);
+    text-shadow: 0 0 10px var(--section1-color);
+ }
+ .about-philosophy .word.glow { 
+    color: var(--section2-color);
+    text-shadow: 0 0 10px var(--section2-color);
+ }
+ .about-journey .word.glow { 
+    color: var(--section3-color);
+    text-shadow: 0 0 10px var(--section3-color);
+ }
+ .about-why .word.glow { 
+    color: var(--section4-color);
+    text-shadow: 0 0 10px var(--section4-color);
+ }
+ 
+ .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(2, 1, 7, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: justify; 
+    word-spacing: normal;
+ }
+
+ /* Sección de foto */
+.profile-image {
+   width: 200px;
+   height: 200px;
+   margin: 2rem auto;
+   border-radius: 50%;
+   overflow: hidden;
+   border: 3px solid var(--section1-color);
+}
+ 
+ .word {
+    display: inline-block;
+    transition: all 0.3s ease;
+ }
+
+ /* Mariposas por sección */
+.about-who .butterfly::before,
+.about-who .butterfly::after {
+    background: linear-gradient(45deg, transparent 50%, var(--section1-color) 50%);
+    opacity: 0.15;
+}
+
+.about-philosophy .butterfly::before,
+.about-philosophy .butterfly::after {
+    background: linear-gradient(45deg, transparent 50%, var(--section2-color) 50%);
+    opacity: 0.15;
+}
