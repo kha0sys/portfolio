@@ -40,12 +40,19 @@ body {
   from { transform: translateY(0); }
   to { transform: translateY(-2000px); }
 }
+/* near-text */
+.butterfly.near-text {
+  filter: brightness(1.5);
+  z-index: 3;
+}
+
 
 .butterfly {
   position: fixed;
   width: 20px;
   height: 20px;
   pointer-events: none;
+  z-index: 2;
 }
 
 .butterfly::before,

@@ -22,7 +22,74 @@ document.querySelectorAll('.content-wrapper p').forEach(text => {
     ).join(' ');
 });
 
-// Interacción mariposas-texto
+function checkWordProximity() {
+    const words = document.querySelectorAll('.word');
+    const butterflies = document.querySelectorAll('.butterfly');
+
+    // Primero, remover la clase near-text de todas las mariposas
+    butterflies.forEach(butterfly => {
+        butterfly.classList.remove('near-text');
+    });
+
+    words.forEach(word => {
+        const wordRect = word.getBoundingClientRect();
+        const wordCenter = {
+            x: wordRect.left + wordRect.width/2,
+            y: wordRect.top + wordRect.height/2
+        };
+
+        butterflies.forEach(butterfly => {
+            const butterflyRect = butterfly.getBoundingClientRect();
+            const butterflyCenter = {
+                x: butterflyRect.left + butterflyRect.width/2,
+                y: butterflyRect.top + butterflyRect.height/2
+            };
+
+            const distance = Math.hypot(
+                wordCenter.x - butterflyCenter.x,
+                wordCenter.y - butterflyCenter.y
+            );
+
+            // Si la mariposa está cerca de una palabra
+            if (distance < 50) {
+                word.classList.add('glow');
+                butterfly.classList.add('near-text');
+            } else {
+                word.classList.remove('glow');
+            }
+        });
+    });
+}
+
+setInterval(checkWordProximity, 50);
+
+// about/scripts/about.js
+
+// Intersection Observer para las secciones
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.3,
+    rootMargin: '-50px'
+});
+
+// Observar todas las secciones
+document.querySelectorAll('.section').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Dividir el texto en palabras para la interacción con mariposas
+document.querySelectorAll('.about-text').forEach(text => {
+    text.innerHTML = text.textContent.split(' ').map(word => 
+        `<span class="word">${word}</span>`
+    ).join(' ');
+});
+
+// Interacción mariposa-texto mejorada
 function checkWordProximity() {
     const words = document.querySelectorAll('.word');
     const butterflies = document.querySelectorAll('.butterfly');
@@ -48,7 +115,10 @@ function checkWordProximity() {
                 wordCenter.y - butterflyCenter.y
             );
 
-            if (distance < 100) isClose = true;
+            // Reducido el radio de interacción
+            if (distance < 50) { // Reducido de 100 a 50
+                isClose = true;
+            }
         });
 
         if (isClose) {
@@ -59,20 +129,15 @@ function checkWordProximity() {
     });
 }
 
-setInterval(checkWordProximity, 100);
+// Ejecutar la verificación de proximidad más frecuentemente
+setInterval(checkWordProximity, 50); // Reducido de 100 a 50ms para mayor suavidad
 
-// Efecto zoom al scroll
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    document.querySelectorAll('.section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        
-        if (scrolled >= sectionTop - window.innerHeight/2 && 
-            scrolled <= sectionTop + sectionHeight) {
-            const progress = (scrolled - sectionTop + window.innerHeight/2) / sectionHeight;
-            const scale = 1 + (progress * 0.1);
-            section.style.transform = `scale(${scale})`;
-        }
+// Smooth scroll para navegación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
