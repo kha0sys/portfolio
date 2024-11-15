@@ -1,0 +1,202 @@
+.portfolio {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 3rem;
+    color: var(--accent-blue);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem; 
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.project-card {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-front {
+    background: linear-gradient(45deg, 
+        rgba(2, 1, 7, 0.8), 
+        rgba(32, 27, 70, 0.8)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(45deg, 
+        rgba(74, 144, 226, 0.1), 
+        rgba(157, 75, 165, 0.1)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-front h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-blue);
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Agregar en projects/styles/projects.css */
+.tech-stack span {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Colores específicos para cada tecnología */
+.tech-react {
+    background: rgba(97, 218, 251, 0.2) !important;
+    color: #61DAFB;
+}
+
+.tech-node {
+    background: rgba(104, 159, 99, 0.2) !important;
+    color: #68F963;
+}
+
+.tech-mongodb {
+    background: rgba(67, 153, 52, 0.2) !important;
+    color: #439934;
+}
+
+.tech-vue {
+    background: rgba(65, 184, 131, 0.2) !important;
+    color: #41B883;
+}
+
+.tech-python {
+    background: rgba(255, 223, 89, 0.2) !important;
+    color: #FFDF59;
+}
+
+.tech-postgresql {
+    background: rgba(51, 103, 145, 0.2) !important;
+    color: #336791;
+}
+
+.tech-angular {
+    background: rgba(221, 0, 49, 0.2) !important;
+    color: #DD0031;
+}
+
+.tech-firebase {
+    background: rgba(255, 203, 43, 0.2) !important;
+    color: #FFCB2B;
+}
+
+.tech-typescript {
+    background: rgba(49, 120, 198, 0.2) !important;
+    color: #3178C6;
+}
+
+.tech-nextjs {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF;
+}
+
+.tech-graphql {
+    background: rgba(229, 53, 171, 0.2) !important;
+    color: #E535AB;
+}
+
+.tech-aws {
+    background: rgba(255, 153, 0, 0.2) !important;
+    color: #FF9900;
+}
+
+.project-card:hover .tech-stack span {
+    background: rgba(74, 144, 226, 0.2);
+}
+
+.card-back p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-link {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.project-link:hover {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+
+/* Ajustamos el responsive */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
